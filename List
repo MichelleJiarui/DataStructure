@@ -5,6 +5,7 @@ def remove_even(lst):
 
     # Replace this placeholder return statement with your code
         return [num for num in lst if num % 2 != 0]
+
 2.Merge sorted List
 Challenge: Merge Two Sorted Lists
 Merge nums1 and nums2 into a single list sorted in nondecreasing order.
