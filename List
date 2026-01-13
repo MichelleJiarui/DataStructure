@@ -1,0 +1,40 @@
+1.Challenge: Remove Even Integers From List
+Statement
+Given a list of integers, lst, remove all the even integers from the list.
+def remove_even(lst):
+
+    # Replace this placeholder return statement with your code
+        return [num for num in lst if num % 2 != 0]
+2.Merge sorted List
+Challenge: Merge Two Sorted Lists
+Merge nums1 and nums2 into a single list sorted in nondecreasing order.
+def mergeTwoLists(l1, l2):
+    # --- Setup Phase ---
+    # "Create a dummy node to simplify the head logic."
+    dummy = ListNode(0)
+    # "Use a 'curr' pointer to build the new list."
+    curr = dummy
+    
+    # --- Loop Phase ---
+    # "While both lists are not empty..."
+    while l1 and l2:
+        # "Compare the values of the current nodes."
+        if l1.val < l2.val:
+            # "If l1 is smaller, attach it to our list."
+            curr.next = l1
+            # "And move the l1 pointer forward."
+            l1 = l1.next
+        else:
+            # "Otherwise, attach l2."
+            curr.next = l2
+            l2 = l2.next
+        
+        # "Move the 'curr' pointer to the next position."
+        curr = curr.next
+        
+    # --- Wrap-up Phase ---
+    # "If one list is exhausted, append the remaining part of the other."
+    curr.next = l1 if l1 else l2
+    
+    # "Return the next node of dummy, which is the actual head."
+    return dummy.next
